@@ -3,6 +3,13 @@ from django import forms
 
 from .models import User
 
+from django.contrib.auth.forms import AuthenticationForm
+
+class LoginForm(forms.ModelForm):
+    '''Simple login form'''
+    class Meta:
+        model = User
+        fields = ('username', 'password')
 
 class UserAdminCreationForm(UserCreationForm):
 
