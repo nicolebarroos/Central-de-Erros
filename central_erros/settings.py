@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'contas',
+    'erros'
     
 ]
 
@@ -126,8 +128,8 @@ STATIC_URL = '/static/'
 
 # auth
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = '/index'
-#LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL = 'logout'
 #AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

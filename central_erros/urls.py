@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from contas.views import IndexView, LoginView
+from contas.views import IndexView
 from django.contrib.auth.views import LoginView, TemplateView
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -24,7 +25,12 @@ urlpatterns = [
     path('contas/',
          include(('contas.urls', 'contas'), namespace='contas')),
 
-    path('login/', LoginView.as_view(template_name="login.html")),
+    path('contas/login/', auth_views.LoginView.as_view(template_name='contas/login.html')),
+    path('contas/logout/', auth_views.LogoutView.as_view(template_name='contas/logout.html')),
+
+    #path('login/', LoginView.as_view(template_name="login.html")),
+    #path('logout/', LogoutView.as_view()),
     path('index/', IndexView.as_view(template_name="index.html")),
+    path('api/', include(('rest_api.urls', 'rest_api'), namespace='rest_api'))
     
 ]
