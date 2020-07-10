@@ -20,6 +20,7 @@ from django.contrib.auth.views import LoginView, TemplateView
 from django.contrib.auth import views as auth_views
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contas/',
