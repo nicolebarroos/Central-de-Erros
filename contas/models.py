@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractBaseUser, UserManager, Permission
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-
+    id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     username = models.CharField(
         'Apelido / Usuário', max_length=30, unique=True, validators=[
             validators.RegexValidator(

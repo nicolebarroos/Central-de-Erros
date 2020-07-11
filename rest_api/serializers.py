@@ -5,9 +5,9 @@ from contas.models import User
 class ErrosModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Erros
-        fields = ['level', 'decricao', 'data_hora', 'eventos']
+        fields = ['id', 'level', 'decricao', 'data_hora', 'eventos']
 
 class UserModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['id', 'email', 'password', 'username']
