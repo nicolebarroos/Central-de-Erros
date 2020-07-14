@@ -2,9 +2,19 @@ from django.contrib import admin
 from .models import Categoria
 from .models import Erros
 
-#class Erros(admin.ModelAdmin):
-#    list_filter = ( 'categorias', )
+class ErrosAdmin(admin.ModelAdmin):
 
-admin.site.register(Categoria)
-admin.site.register(Erros)
+    list_display = ['level', 'eventos', 'decricao']
+    #search_fields = ['level', 'categoria', 'eventos']
+    list_filter = ['eventos', 'categoria', 'level']
+
+class CategoriaAdmin(admin.ModelAdmin):
+
+    list_display = ['status', 'descricao']
+    #search_fields = ['level', 'categoria', 'eventos']
+    #list_filter = ['eventos', 'categoria', 'level']
+
+
+admin.site.register(Categoria, CategoriaAdmin)
+admin.site.register(Erros, ErrosAdmin)
 

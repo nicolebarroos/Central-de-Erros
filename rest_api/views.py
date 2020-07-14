@@ -27,4 +27,4 @@ class CategoriaList(generics.ListAPIView):
     queryset = Erros.objects.all()
     serializer_class = ErrosModelSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['erros__level']
+    filterset_fields = ['categoria']

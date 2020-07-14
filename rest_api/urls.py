@@ -12,6 +12,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/login', include('rest_framework.urls')),
     path('get_token', obtain_auth_token),
-    
+    path('categorias/', CategoriaList.as_view())
     # username e um password
 ]
