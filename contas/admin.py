@@ -36,3 +36,5 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
+admin.site.site_header = 'Central de Erros'
+admin.site.site_title = 'Central de Erros'
