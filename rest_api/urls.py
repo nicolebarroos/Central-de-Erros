@@ -2,7 +2,7 @@ from django.urls import include, path, re_path
 from rest_framework import routers
 from rest_framework import urls
 from rest_framework.authtoken.views import obtain_auth_token
-from rest_api.views import ErrosApiViewSet, UserApiViewSet, CategoriaList, ErrosOrderList
+from rest_api.views import ErrosApiViewSet, UserApiViewSet, CategoriaList, ErrosOrderList, ErrosShearch
 
 router = routers.DefaultRouter()
 router.register(r'erros', ErrosApiViewSet)
@@ -13,6 +13,7 @@ urlpatterns = [
     path('api-auth/login', include('rest_framework.urls')),
     path('get_token', obtain_auth_token),
     path('categorias/', CategoriaList.as_view()),
-    path('ordenar/', ErrosOrderList.as_view())
+    path('ordenar/', ErrosOrderList.as_view()),
+    path('buscar/', ErrosShearch.as_view())
     # username e um password
 ]
