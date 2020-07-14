@@ -13,8 +13,8 @@ from erros.models import Erros
 from contas.models import User
 
 class ErrosApiViewSet(viewsets.ModelViewSet):
-    #authentication_classes = [TokenAuthentication]
-    #permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     queryset = Erros.objects.all()
     serializer_class = ErrosModelSerializer
 
