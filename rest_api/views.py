@@ -5,6 +5,7 @@ from rest_framework import generics
 from rest_api.serializers import ErrosModelSerializer, UserModelSerializer
 from rest_framework.authentication import TokenAuthentication
 from django_filters import rest_framework as filters
+from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
 
@@ -28,3 +29,9 @@ class CategoriaList(generics.ListAPIView):
     serializer_class = ErrosModelSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['categoria']
+
+class ErrosOrderList(generics.ListAPIView):
+    queryset = Erros.objects.all()
+    serializer_class = ErrosModelSerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = ['level', 'eventos']
