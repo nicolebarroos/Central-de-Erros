@@ -16,17 +16,17 @@ def status_desenvolvimento(modeladmin, request, queryset):
     queryset.update(categoria='3')
 status_desenvolvimento.short_description = "Marcar para Desenvolvimento"
 
-def status_arquivado(modeladmin, request, queryset):
-    queryset.update(categoria='4')
-status_arquivado.short_description = "Marcar para Arquivar"
+def status_arquivar(modeladmin, request, queryset):
+    queryset.update(arquivar='True')
+status_arquivar.short_description = "Arquivar erros selecionados"
 
 
 class ErrosAdmin(admin.ModelAdmin):
 
-    list_display = ['level', 'eventos', 'descricao', 'categoria']
+    list_display = ['level', 'eventos', 'descricao', 'arquivar', 'categoria']
     #search_fields = ['level', 'categoria', 'eventos']
     list_filter = ['eventos', 'categoria', 'level']
-    actions = [status_producao, status_homologacao, status_desenvolvimento, status_arquivado]
+    actions = [status_producao, status_homologacao, status_desenvolvimento, status_arquivar]
 
 class CategoriaAdmin(admin.ModelAdmin):
 

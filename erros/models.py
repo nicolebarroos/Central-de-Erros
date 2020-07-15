@@ -4,8 +4,7 @@ from datetime import datetime
 STATUS_CHOICES = [
     ('1', 'Produção'),
     ('2', 'Homologação'),
-    ('3', 'Desenvolvimento'),
-    ('4', 'Arquivado'),
+    ('3', 'Desenvolvimento')
 ]
 
 class Categoria(models.Model):
@@ -22,6 +21,11 @@ class Erros(models.Model):
     origem = models.DateTimeField(default=datetime.now)
     eventos = models.CharField(max_length=50)
     categoria = models.CharField('Categoria', max_length=1, choices=STATUS_CHOICES)
+    arquivar = models.BooleanField(default=False)
 
     def __str__(self):
         return self.level
+
+    class Meta:
+        verbose_name = 'Erro'
+        verbose_name_plural = 'Erros'
