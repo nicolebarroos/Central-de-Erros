@@ -2,9 +2,9 @@ from django.db import models
 from datetime import datetime
 
 STATUS_CHOICES = [
-    ('1', 'Produção'),
-    ('2', 'Homologação'),
-    ('3', 'Desenvolvimento')
+    ('Produção', 'Produção'),
+    ('Homologação', 'Homologação'),
+    ('Desenvolvimento', 'Desenvolvimento')
 ]
 
 class Categoria(models.Model):
@@ -17,10 +17,10 @@ class Categoria(models.Model):
 class Erros(models.Model):
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     level = models.CharField(max_length=50)
-    descricao = models.CharField(max_length=100)
+    descricao = models.CharField(max_length=150)
     origem = models.DateTimeField(default=datetime.now)
     eventos = models.CharField(max_length=50)
-    categoria = models.CharField('Categoria', max_length=1, choices=STATUS_CHOICES)
+    categoria = models.CharField('Categoria', max_length=50, choices=STATUS_CHOICES)
     arquivar = models.BooleanField(default=False)
 
     def __str__(self):

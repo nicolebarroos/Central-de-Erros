@@ -29,15 +29,30 @@ class CategoriaList(generics.ListAPIView):
     serializer_class = ErrosModelSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['categoria']
+#http://localhost:8000/api/categorias/?categoria=Desenvolvimento
+#http://localhost:8000/api/categorias/?categoria=Produção
 
 class ErrosOrderList(generics.ListAPIView):
     queryset = Erros.objects.all()
     serializer_class = ErrosModelSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = ['level', 'eventos']
+#http://localhost:8000/api/ordenar/?ordering=eventos
+#http://localhost:8000/api/ordenar/?ordering=level
 
 class ErrosShearch(generics.ListAPIView):
     queryset = Erros.objects.all()
     serializer_class = ErrosModelSerializer
     filter_backends = [SearchFilter]
     search_fields = ['level', 'origem']
+#http://localhost:8000/api/buscar/?search=Error
+#http://localhost:8000/api/buscar/?search=2020-07-15
+
+
+class ArquivadosList(generics.ListAPIView):
+    queryset = Erros.objects.all()
+    serializer_class = ErrosModelSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['arquivar']
+    
+#http://localhost:8000/api/arquivados?arquivar=True
