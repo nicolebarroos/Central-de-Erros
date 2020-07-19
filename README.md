@@ -16,12 +16,20 @@ Em projetos modernos é cada vez mais comum o uso de arquiteturas baseadas em se
 
 ### Virtualenv:
 
->conda create --name nome_do_ambiente_virtual python=3.7 django=3.0
+>cd central-erros-back
+>pip3 install virtualenv
+>virtualenv venv -p python3
+>source venv/bin/activate 
 
-## Dependências:
+### Dependências:
 
->pip install -r requirements.txt
+>(venv) pip install -r requirements.txt
 
+### Configurando:
+>(venv) python manage.py migrate
+>(venv) python manage.py createsuperuser
+
+### Ativando o sistema
 >python manage.py runserver
 
 ### Informações sobre rotas, autenticação e parâmetros, consulte a documentação via Postman:
