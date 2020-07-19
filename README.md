@@ -17,8 +17,11 @@ Em projetos modernos é cada vez mais comum o uso de arquiteturas baseadas em se
 ### Virtualenv:
 
 >cd central-erros-back
+
 >pip3 install virtualenv
+
 >virtualenv venv -p python3
+
 >source venv/bin/activate 
 
 ### Dependências:
@@ -27,6 +30,7 @@ Em projetos modernos é cada vez mais comum o uso de arquiteturas baseadas em se
 
 ### Configurando:
 >(venv) python manage.py migrate
+
 >(venv) python manage.py createsuperuser
 
 ### Ativando o sistema
