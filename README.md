@@ -33,7 +33,7 @@ Em projetos modernos é cada vez mais comum o uso de arquiteturas baseadas em se
 
 >(venv) python manage.py createsuperuser
 
-### Ativando o sistema
+### Ativando o sistema:
 >python manage.py runserver
 
 ### Informações sobre rotas, autenticação e parâmetros, consulte a documentação via Postman:
