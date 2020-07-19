@@ -3,7 +3,8 @@
 
 ![Api](https://user-images.githubusercontent.com/35440249/87815852-ba745300-c83c-11ea-830d-97980b45b213.PNG)
 
-![admin api](https://user-images.githubusercontent.com/35440249/87815996-f3142c80-c83c-11ea-8b42-67d844690ca8.PNG)
+![admin](https://user-images.githubusercontent.com/35440249/87876879-4effc200-c9b1-11ea-9e97-6e9717531c60.PNG)
+
 
 ### Objetivo:
 
