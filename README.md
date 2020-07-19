@@ -16,7 +16,7 @@ Em projetos modernos é cada vez mais comum o uso de arquiteturas baseadas em se
 
 ### Virtualenv:
 
->cd central-erros-back
+>cd central_erros
 
 >pip3 install virtualenv
 
