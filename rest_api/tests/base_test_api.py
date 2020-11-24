@@ -4,32 +4,34 @@ from erros.models import Erros
 
 class BaseAPITestCase(APITestCase):
     def setUp(self):
-        self.erros = Erros.objects.create(
-            #id= 1,
-            level='TesteApi',
-            descricao='Produção',
-            origem= '2020-07-15T18:49:39-03:00',
-            eventos= "404",
-            categoria= 'Produção',
-            arquivar= False
+        self.error = Erros.objects.create(
+            level='Unauthorized',
+            descricao='A 401 error response indicates that the client tried to operate on a protected resource without '
+                      'providing the proper authorization',
+            origem='2020-07-15T18:49:39-03:00',
+            eventos="401",
+            categoria='Development',
+            arquivar=False
         )
 
         self.valid_params = {
-            "level": "Teste",
-            "descricao": "Desenvolvimento",
+            "level": "Unauthorized",
+            "descricao": "A 401 error response indicates that the client tried to operate on a protected resource "
+                         "without providing the proper authorization",
             "origem": "2020-07-15T18:49:39-03:00",
-            "eventos": "403",
-            "categoria": "Desenvolvimento",
+            "eventos": "401",
+            "categoria": "Development",
             "arquivar": False
         }
 
         self.invalid_params = {
             "level": " ",
-            "descricao": "Desenvolvimento",
+            "descricao": "A 401 error response indicates that the client tried to operate on a protected resource "
+                         "without providing the proper authorization",
             "origem": "2020-07-15T18:49:39-03:00",
-            "eventos": "403",
-            "categoria": "Desenvolvimento",
+            "eventos": "401",
+            "categoria": "Development",
             "arquivar": False
         }
 
-        self.url_erros = "/api/erros/"
+        self.url_error = "/api/erros/"
