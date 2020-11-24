@@ -7,11 +7,11 @@ class CreateError(BaseAPITestCase):
         super().setUp()
 
     def test_create_errors_with_valid_params(self):
-        response = self.client.post(self.url_erros, self.valid_params, format='json')
+        response = self.client.post(self.url_error, self.valid_params, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_create_errors_with_invalid_params(self):
-        response = self.client.post(self.url_erros, self.invalid_params, format='json')
+        response = self.client.post(self.url_error, self.invalid_params, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
@@ -20,11 +20,11 @@ class ListingError(BaseAPITestCase):
         super().setUp()
 
     def test_listing_errors(self):
-        response = self.client.get(self.url_erros)
+        response = self.client.get(self.url_error)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_listing_errors_by_id(self):
-        response = self.client.get(self.url_erros, kwargs={'id': self.erros.id})
+        response = self.client.get(self.url_error, kwargs={'id': self.error.id})
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
@@ -33,11 +33,11 @@ class UpdatingError(BaseAPITestCase):
         super().setUp()
 
     def test_updating_errors_with_valid_params(self):
-        response = self.client.put(f"{self.url_erros}{self.erros.id}/", self.valid_params, format='json')
+        response = self.client.put(f"{self.url_error}{self.error.id}/", self.valid_params, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_updating_errors_with_invalid_params(self):
-        response = self.client.put(f"{self.url_erros}{self.erros.id}/", self.invalid_params, format='json')
+        response = self.client.put(f"{self.url_error}{self.error.id}/", self.invalid_params, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
@@ -46,5 +46,5 @@ class Deletion(BaseAPITestCase):
         super().setUp()
 
     def test_deletion_errors(self):
-        response = self.client.delete(f"{self.url_erros}{self.erros.id}/", format='json')
+        response = self.client.delete(f"{self.url_error}{self.error.id}/", format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
